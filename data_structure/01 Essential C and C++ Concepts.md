@@ -912,3 +912,175 @@ Explanation:
 5. Finally, we free the dynamically allocated memory using `free` to avoid memory leaks.
 
 This way, the dynamically allocated `Point` object can be accessed and used by any function in the program as long as they have a pointer to it.
+
+## Creating and Accessing Dynamically Allocated Objects via Pointers in C
+
+dynamically allocate memory for an object in the heap within a function, and then return a pointer to that object. This pointer can be accessed and used by the main function and any other function in the program. Here's an example illustrating this concept:
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+
+// Define a structure representing a point in 2D space
+struct Point {
+    int x;
+    int y;
+};
+
+// Function prototype
+struct Point *createPoint(int x, int y);
+
+int main() {
+    // Call the function to create a point and get a pointer to it
+    struct Point *pointPtr = createPoint(3, 4);
+
+    // Access and print the coordinates of the point
+    printf("Coordinates of the point: (%d, %d)\\n", pointPtr->x, pointPtr->y);
+
+    // Free the dynamically allocated memory
+    free(pointPtr);
+
+    return 0;
+}
+
+// Function to create a point and return a pointer to it
+struct Point *createPoint(int x, int y) {
+    // Dynamically allocate memory for the point
+    struct Point *ptr = (struct Point *)malloc(sizeof(struct Point));
+
+    // Check if memory allocation was successful
+    if (ptr == NULL) {
+        printf("Memory allocation failed\\n");
+        exit(1); // Exit program with error status
+    }
+
+    // Assign values to the coordinates of the point
+    ptr->x = x;
+    ptr->y = y;
+
+    return ptr; // Return pointer to the created point
+}
+
+```
+
+Explanation:
+
+1. We define a structure `Point` representing a point in 2D space with `x` and `y` coordinates.
+2. We declare a function `createPoint` that dynamically allocates memory for a `Point` object in the heap, initializes its coordinates, and returns a pointer to the created object.
+3. In the `main` function, we call `createPoint` to create a point with coordinates (3, 4) and obtain a pointer to it.
+4. We access and print the coordinates of the point using the pointer returned by `createPoint`.
+5. Finally, we free the dynamically allocated memory using `free` to avoid memory leaks.
+
+This way, the dynamically allocated `Point` object can be accessed and used by any function in the program as long as they have a pointer to it.
+
+## Convert Struct to Object-Oriented Programming
+
+### Struct Implementation:
+
+```cpp
+#include <stdio.h>
+
+// Define a struct to represent a rectangle
+struct Rectangle
+{
+    int length;
+    int breadth;
+};
+
+// Function to initialize the dimensions of the rectangle
+void initialize(struct Rectangle *r, int l, int b)
+{
+    r -> length = l;
+    r -> breadth = b;
+}
+
+// Function to calculate the area of the rectangle
+int area(struct Rectangle r)
+{
+    return r.length * r.breadth;
+}
+
+// Function to change the length of the rectangle
+void changelength(struct Rectangle *r, int l)
+{
+    r -> length = l;
+}
+
+int main()
+{
+    // Create a rectangle object
+    struct Rectangle r;
+
+    // Initialize the rectangle dimensions
+    initialize(&r, 10 ,5);
+
+    // Calculate the area of the rectangle
+    area(r);
+
+    // Change the length of the rectangle
+    changelength(&r, 20);
+
+    return 0;
+}
+
+```
+
+### Object-Oriented Programming (Class) Implementation:
+
+```cpp
+#include <iostream>
+
+using namespace std;
+
+// Define a class to represent a rectangle
+class Rectangle
+{
+private:
+    int length;
+    int breadth;
+
+public:
+    // Function to initialize the dimensions of the rectangle
+    void initialize(int l, int b)
+    {
+        length = l;
+        breadth = b;
+    }
+
+    // Function to calculate the area of the rectangle
+    int area()
+    {
+        return length * breadth;
+    }
+
+    // Function to change the length of the rectangle
+    void changelength(int l)
+    {
+        length = l;
+    }
+};
+
+int main()
+{
+    // Create an object of the Rectangle class
+    Rectangle r;
+
+    // Initialize the dimensions of the rectangle
+    r.initialize(10, 5);
+
+    // Calculate the area of the rectangle
+    cout << "Area: " << r.area() << endl;
+
+    // Change the length of the rectangle
+    r.changelength(20);
+
+    return 0;
+}
+
+```
+
+Explanation:
+
+- In the first implementation (using a `struct`), we define a `Rectangle` struct with `length` and `breadth` members. We also define functions `initialize`, `area`, and `changelength` to perform operations on the rectangle.
+- In the second implementation (using a `class`), we define a `Rectangle` class with private `length` and `breadth` members. We encapsulate the functionality of the struct's functions as member functions of the class.
+- Both implementations achieve the same functionality of representing a rectangle and performing operations on it. However, the class-based implementation adheres to the principles of object-oriented programming, offering encapsulation and better organization of code.
