@@ -6,10 +6,10 @@ Tags: In progress
 
 ### Create Your First Class
 
-### car example
+### Car Example
 
 - g++ -o myprogram main.cpp car.cpp
-- code
+- Code
     - car.h
         
         ```cpp
@@ -90,13 +90,12 @@ Tags: In progress
 ### **Constructor**
 
 - "When you instantiate an object from a class in C++, the constructor is automatically called.”
-- code
+- Code
     - car.h
         
         ```cpp
         #pragma once
         #include <iostream>
-        
         #include <string>
         using namespace std;
         
@@ -180,16 +179,13 @@ Tags: In progress
 
 ### **Constructor** Initialization **List Hard Code**
 
-- فرق سرعة اني احطها جوا ال Constructor 
-ال Initialization List اسرع
-- Initialization
-- code
+- Initializing member variables directly within the constructor’s declaration can improve performance.
+- Code
     - car.h
         
         ```cpp
         #pragma once
         #include <iostream>
-        
         #include <string>
         using namespace std;
         
@@ -268,21 +264,17 @@ Tags: In progress
         }
         ```
         
-    - هنا في مشكلة انه الكود ده احنا اللي بنعمل للقيم Initialization بادينا
-    عاوزين نخلي اليوز هو اللي يعملها
+    - Here, we have hardcoded the initialization of the member variables inside the constructor. However, we want the user to initialize them.
 
 ### **Constructor** Initialization **List Value**
 
-- فرق سرعة اني احطها جوا ال Constructor 
-ال Initialization List اسرع
-- Initialization
-- code
+- Initializing member variables directly within the constructor’s declaration can improve performance.
+- Code
     - car.h
         
         ```cpp
         #pragma once
         #include <iostream>
-        
         #include <string>
         using namespace std;
         
@@ -339,6 +331,8 @@ Tags: In progress
         // {
         // }
         ```
+
+
         
     - main.cpp
         
@@ -364,23 +358,18 @@ Tags: In progress
         }
         ```
         
-    - هنا في مشكلة انه الكود ده احنا اللي بنعمل للقيم Initialization بادينا
-    عاوزين نخلي اليوز هو اللي يعملها
+    - Here, we want the user to initialize the member variables.
 
 ### **Destructor**
 
-- آخر حاجة بترجع لما البرنامج يخلص
-- بما ان احنا بننشئ object
-    - ف ال object بيحجز مكان في الذاكرة
-    - ممكن نحرر الميموري في الآخر نعملها فري من خلاله
-    - او نكتب رسالة مثلا ان البرنامج انتهي
-- code
+- The destructor is called automatically when the object is destroyed.
+- Since we are dynamically allocating memory for the object, we can release it in the destructor.
+- Code
     - car.h
         
         ```cpp
         #pragma once
         #include <iostream>
-        
         #include <string>
         using namespace std;
         
@@ -468,9 +457,9 @@ Tags: In progress
 
 ### Overload Method
 
-- If you have multiple methods in a class with the same name, it's known as "method overloading.”
+- Method overloading allows multiple methods in a class with the same name.
 - g++ -o my_program main.cpp calc.cpp
-- code
+- Code
     - calc.cpp
         
         ```cpp
@@ -515,7 +504,6 @@ Tags: In progress
         ```cpp
         #pragma once
         #include <iostream>
-        
         #include <string>
         using namespace std;
         class Calc
