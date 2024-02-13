@@ -1,34 +1,3 @@
-# 00 Before we Start
-
-Tags: Done
-
-## What are the topics of this course?
-
-- 01 Before we Start
-- 02 Essential C and C++ Concepts (Array & Pointers & Classes)
-- 03 Required Setup for Programming
-- 04 Introduction
-- 05 Recursion
-- 06 Arrays Representations
-- 07 Array ADT
-- 08 Strings
-- 09 Matrices
-- 10 Sparse Matrix and Polynomial Representation
-- 11 Linked List
-- 12 Sparse Matrix and Polynomial using Linked List
-- 13 Stack
-- 14 Queues
-- 15 Trees
-- 17 AVL Trees
-- 18 Search Trees
-- 19 Heap
-- 20 Sorting Techniques
-- 21 Hashing Technique
-- 22 Graphs
-- 23 Asymptotic Notations
-- **Binary Search Trees**
-- The end
-
 ## What is the data structure?
 
 [https://scaler.com/topics/images/datat-structure-types-of-data-structure](https://scaler.com/topics/images/datat-structure-types-of-data-structure)
