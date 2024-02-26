@@ -1,7 +1,5 @@
 # bubble sort
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/259ab5a1-7184-44a1-892d-71e027ec75e8/6ea084b5-5cf4-4529-8f62-7990fadb9930/Untitled.png)
-
 ## pseudo-code
 
 ```c
